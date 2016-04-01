@@ -39,7 +39,7 @@ public class MainActivity extends Activity {
           + KeyProperties.BLOCK_MODE_ECB
           + "/"
           + KeyProperties.ENCRYPTION_PADDING_RSA_PKCS1);
-      cipher.init(Cipher.ENCRYPT_MODE, keyGenerator.generateKeyPair().getPublic());
+      cipher.init(Cipher.DECRYPT_MODE, keyGenerator.generateKeyPair().getPrivate());
 
       FingerprintManager.CryptoObject crypto = new FingerprintManager.CryptoObject(cipher);
       CancellationSignal signal = new CancellationSignal();
